@@ -1,0 +1,392 @@
+{
+	"name": "outputCsv",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "MyTestBlob",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "datafactorysinktest"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "flight_date",
+				"type": "String"
+			},
+			{
+				"name": "flight_id",
+				"type": "String"
+			},
+			{
+				"name": "flight_designator",
+				"type": "String"
+			},
+			{
+				"name": "marketing_airline_code_iata",
+				"type": "String"
+			},
+			{
+				"name": "marketing_airline_code_icao",
+				"type": "String"
+			},
+			{
+				"name": "marketing_airline_name",
+				"type": "String"
+			},
+			{
+				"name": "operating_airline_code_iata",
+				"type": "String"
+			},
+			{
+				"name": "operating_airline_code_icao",
+				"type": "String"
+			},
+			{
+				"name": "operating_airline_name",
+				"type": "String"
+			},
+			{
+				"name": "operator_country",
+				"type": "String"
+			},
+			{
+				"name": "operator_classification",
+				"type": "String"
+			},
+			{
+				"name": "departure_airport_code_iata",
+				"type": "String"
+			},
+			{
+				"name": "departure_airport_code_icao",
+				"type": "String"
+			},
+			{
+				"name": "departure_airport_name",
+				"type": "String"
+			},
+			{
+				"name": "departure_city_code_iata",
+				"type": "String"
+			},
+			{
+				"name": "departure_city_name",
+				"type": "String"
+			},
+			{
+				"name": "departure_country_code_iata",
+				"type": "String"
+			},
+			{
+				"name": "departure_country_name",
+				"type": "String"
+			},
+			{
+				"name": "departure_terminal",
+				"type": "String"
+			},
+			{
+				"name": "departure_gate",
+				"type": "String"
+			},
+			{
+				"name": "arrival_airport_code_iata",
+				"type": "String"
+			},
+			{
+				"name": "arrival_airport_code_icao",
+				"type": "String"
+			},
+			{
+				"name": "arrival_airport_name",
+				"type": "String"
+			},
+			{
+				"name": "arrival_city_code_iata",
+				"type": "String"
+			},
+			{
+				"name": "arrival_city_name",
+				"type": "String"
+			},
+			{
+				"name": "arrival_country_code_iata",
+				"type": "String"
+			},
+			{
+				"name": "arrival_country_name",
+				"type": "String"
+			},
+			{
+				"name": "arrival_terminal",
+				"type": "String"
+			},
+			{
+				"name": "arrival_gate",
+				"type": "String"
+			},
+			{
+				"name": "scheduled_departure_date",
+				"type": "String"
+			},
+			{
+				"name": "scheduled_arrival_date",
+				"type": "String"
+			},
+			{
+				"name": "tail_number",
+				"type": "String"
+			},
+			{
+				"name": "hexcode",
+				"type": "String"
+			},
+			{
+				"name": "scheduled_departure",
+				"type": "String"
+			},
+			{
+				"name": "departure_utc_variance",
+				"type": "String"
+			},
+			{
+				"name": "scheduled_arrival",
+				"type": "String"
+			},
+			{
+				"name": "arrival_utc_variance",
+				"type": "String"
+			},
+			{
+				"name": "actual_gate_departure",
+				"type": "String"
+			},
+			{
+				"name": "actual_runway_departure",
+				"type": "String"
+			},
+			{
+				"name": "actual_runway_arrival",
+				"type": "String"
+			},
+			{
+				"name": "actual_gate_arrival",
+				"type": "String"
+			},
+			{
+				"name": "scheduled_block_minutes",
+				"type": "String"
+			},
+			{
+				"name": "actual_block_minutes",
+				"type": "String"
+			},
+			{
+				"name": "actual_block_minutes_est",
+				"type": "String"
+			},
+			{
+				"name": "departure_delay",
+				"type": "String"
+			},
+			{
+				"name": "arrival_delay",
+				"type": "String"
+			},
+			{
+				"name": "utc_scheduled_departure",
+				"type": "String"
+			},
+			{
+				"name": "utc_scheduled_arrival",
+				"type": "String"
+			},
+			{
+				"name": "utc_gate_departure",
+				"type": "String"
+			},
+			{
+				"name": "utc_wheels_up",
+				"type": "String"
+			},
+			{
+				"name": "utc_wheels_down",
+				"type": "String"
+			},
+			{
+				"name": "utc_gate_arrival",
+				"type": "String"
+			},
+			{
+				"name": "taxi_in",
+				"type": "String"
+			},
+			{
+				"name": "taxi_out",
+				"type": "String"
+			},
+			{
+				"name": "taxi_in_est",
+				"type": "String"
+			},
+			{
+				"name": "taxi_out_est",
+				"type": "String"
+			},
+			{
+				"name": "gate_departure_est",
+				"type": "String"
+			},
+			{
+				"name": "wheels_up_est",
+				"type": "String"
+			},
+			{
+				"name": "wheels_down_est",
+				"type": "String"
+			},
+			{
+				"name": "gate_arrival_est",
+				"type": "String"
+			},
+			{
+				"name": "calculated_air_minutes",
+				"type": "String"
+			},
+			{
+				"name": "calculated_air_minutes_est",
+				"type": "String"
+			},
+			{
+				"name": "codeshare_carriers",
+				"type": "String"
+			},
+			{
+				"name": "wet_lease_flight",
+				"type": "String"
+			},
+			{
+				"name": "codeshare_flight",
+				"type": "String"
+			},
+			{
+				"name": "flight_distance_km",
+				"type": "String"
+			},
+			{
+				"name": "flight_distance_miles",
+				"type": "String"
+			},
+			{
+				"name": "completed_flight",
+				"type": "String"
+			},
+			{
+				"name": "cancelled_flight",
+				"type": "String"
+			},
+			{
+				"name": "diverted_flight",
+				"type": "String"
+			},
+			{
+				"name": "diverted_airport_code_iata",
+				"type": "String"
+			},
+			{
+				"name": "diverted_airport_code_icao",
+				"type": "String"
+			},
+			{
+				"name": "flown_aircraft_class",
+				"type": "String"
+			},
+			{
+				"name": "flown_aircraft_family",
+				"type": "String"
+			},
+			{
+				"name": "flown_aircraft_type",
+				"type": "String"
+			},
+			{
+				"name": "flown_aircraft_masterseries",
+				"type": "String"
+			},
+			{
+				"name": "flown_aircraft_series",
+				"type": "String"
+			},
+			{
+				"name": "flown_aircraft_subseries",
+				"type": "String"
+			},
+			{
+				"name": "flown_aircraft_market_group",
+				"type": "String"
+			},
+			{
+				"name": "flown_aircraft_iata_designation_code",
+				"type": "String"
+			},
+			{
+				"name": "flown_aircraft_icao_designation_code",
+				"type": "String"
+			},
+			{
+				"name": "scheduled_equipment_sub_code",
+				"type": "String"
+			},
+			{
+				"name": "flown_engine_manufacturer",
+				"type": "String"
+			},
+			{
+				"name": "flown_engine_family",
+				"type": "String"
+			},
+			{
+				"name": "flown_engine_type",
+				"type": "String"
+			},
+			{
+				"name": "flown_engine_subseries",
+				"type": "String"
+			},
+			{
+				"name": "flown_first_class_seats",
+				"type": "String"
+			},
+			{
+				"name": "flown_business_seats",
+				"type": "String"
+			},
+			{
+				"name": "flown_premium_economy_seats",
+				"type": "String"
+			},
+			{
+				"name": "flown_economy_seats",
+				"type": "String"
+			},
+			{
+				"name": "flown_other_seats",
+				"type": "String"
+			},
+			{
+				"name": "flown_total_seats",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

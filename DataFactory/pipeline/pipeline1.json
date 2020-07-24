@@ -1,0 +1,1162 @@
+{
+	"name": "pipeline1",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"wildcardFileName": "*",
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".csv"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "flight_id",
+									"type": "DateTime",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "flight_date_test",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "flight_designator",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "flight_designator",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "marketing_airline_code_iata",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "marketing_airline_code_iata",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "marketing_airline_code_icao",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "marketing_airline_code_icao",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "marketing_airline_name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "marketing_airline_name",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "operating_airline_code_iata",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "operating_airline_code_iata",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "operating_airline_code_icao",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "operating_airline_code_icao",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "operating_airline_name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "operating_airline_name",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "operator_country",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "operator_country",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "operator_classification",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "operator_classification",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "departure_airport_code_iata",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "departure_airport_code_iata",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "departure_airport_code_icao",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "departure_airport_code_icao",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "departure_airport_name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "departure_airport_name",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "departure_city_code_iata",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "departure_city_code_iata",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "departure_city_name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "departure_city_name",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "departure_country_code_iata",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "departure_country_code_iata",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "departure_country_name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "departure_country_name",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "departure_terminal",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "departure_terminal",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "departure_gate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "departure_gate",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "arrival_airport_code_iata",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "arrival_airport_code_iata",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "arrival_airport_code_icao",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "arrival_airport_code_icao",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "arrival_airport_name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "arrival_airport_name",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "arrival_city_code_iata",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "arrival_city_code_iata",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "arrival_city_name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "arrival_city_name",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "arrival_country_code_iata",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "arrival_country_code_iata",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "arrival_country_name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "arrival_country_name",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "arrival_terminal",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "arrival_terminal",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "arrival_gate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "arrival_gate",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "scheduled_departure_date",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "scheduled_departure_date",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "scheduled_arrival_date",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "scheduled_arrival_date",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "tail_number",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "tail_number",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "hexcode",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "hexcode",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "scheduled_departure",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "scheduled_departure",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "departure_utc_variance",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "departure_utc_variance",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "scheduled_arrival",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "scheduled_arrival",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "arrival_utc_variance",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "arrival_utc_variance",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "actual_gate_departure",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "actual_gate_departure",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "actual_runway_departure",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "actual_runway_departure",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "actual_runway_arrival",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "actual_runway_arrival",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "actual_gate_arrival",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "actual_gate_arrival",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "scheduled_block_minutes",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "scheduled_block_minutes",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "actual_block_minutes",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "actual_block_minutes",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "actual_block_minutes_est",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "actual_block_minutes_est",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "departure_delay",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "departure_delay",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "arrival_delay",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "arrival_delay",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "utc_scheduled_departure",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "utc_scheduled_departure",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "utc_scheduled_arrival",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "utc_scheduled_arrival",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "utc_gate_departure",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "utc_gate_departure",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "utc_wheels_up",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "utc_wheels_up",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "utc_wheels_down",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "utc_wheels_down",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "utc_gate_arrival",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "utc_gate_arrival",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "taxi_in",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "taxi_in",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "taxi_out",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "taxi_out",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "taxi_in_est",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "taxi_in_est",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "taxi_out_est",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "taxi_out_est",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "gate_departure_est",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "gate_departure_est",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "wheels_up_est",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "wheels_up_est",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "wheels_down_est",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "wheels_down_est",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "gate_arrival_est",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "gate_arrival_est",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "calculated_air_minutes",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "calculated_air_minutes",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "calculated_air_minutes_est",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "calculated_air_minutes_est",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "codeshare_carriers",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "codeshare_carriers",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "wet_lease_flight",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "wet_lease_flight",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "codeshare_flight",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "codeshare_flight",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "flight_distance_km",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "flight_distance_km",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "flight_distance_miles",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "flight_distance_miles",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "completed_flight",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "completed_flight",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "cancelled_flight",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "cancelled_flight",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "diverted_flight",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "diverted_flight",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "diverted_airport_code_iata",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "diverted_airport_code_iata",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "diverted_airport_code_icao",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "diverted_airport_code_icao",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "flown_aircraft_class",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "flown_aircraft_class",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "flown_aircraft_family",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "flown_aircraft_family",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "flown_aircraft_type",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "flown_aircraft_type",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "flown_aircraft_masterseries",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "flown_aircraft_masterseries",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "flown_aircraft_series",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "flown_aircraft_series",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "flown_aircraft_subseries",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "flown_aircraft_subseries",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "flown_aircraft_market_group",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "flown_aircraft_market_group",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "flown_aircraft_iata_designation_code",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "flown_aircraft_iata_designation_code",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "flown_aircraft_icao_designation_code",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "flown_aircraft_icao_designation_code",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "scheduled_equipment_sub_code",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "scheduled_equipment_sub_code",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "flown_engine_manufacturer",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "flown_engine_manufacturer",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "flown_engine_family",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "flown_engine_family",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "flown_engine_type",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "flown_engine_type",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "flown_engine_subseries",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "flown_engine_subseries",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "flown_first_class_seats",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "flown_first_class_seats",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "flown_business_seats",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "flown_business_seats",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "flown_premium_economy_seats",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "flown_premium_economy_seats",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "flown_economy_seats",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "flown_economy_seats",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "flown_other_seats",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "flown_other_seats",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "flown_total_seats",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "flown_total_seats",
+									"type": "String",
+									"physicalType": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ciriumCsv",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "outputCsv",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
